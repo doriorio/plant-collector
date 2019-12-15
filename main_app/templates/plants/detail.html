@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="card">
+
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+                    <div class="box" style="background:{{ plant.color}};"></div>
+            </div>
+            <div class="media-content">
+              <p class="title is-4"> {{ plant.common_name.capitalize }}</a></p>
+              <p class="subtitle is-6">{{ plant.species}}</p>
+            </div>
+          </div>
+      
+          <div class="content">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                {{ plant.native_location}}
+            
+          </div>
+          <div class="content">
+                <i class="fas fa-quote-left"></i><em>
+                {{ plant.description}}
+            </em>
+                <i class="fas fa-quote-right"></i>
+
+          </div>
+
+        </div>
+      </div>
+      
+
+
+
+{% endblock %}
+
