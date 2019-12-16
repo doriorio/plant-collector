@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Plant(models.Model):
@@ -8,3 +9,9 @@ class Plant(models.Model):
     native_location = models.CharField(max_length=140)
     description = models.CharField(max_length=480, default="")
     isHousePlant = models.BooleanField
+
+    def __str__(self):
+        return self.species
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'plant_id': self.id})

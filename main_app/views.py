@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView
+
 from .models import Plant
 
 from django.http import HttpResponse
@@ -17,3 +19,11 @@ def plants_index(request):
 def plants_detail(request, plant_id):
   plant = Plant.objects.get(id=plant_id)
   return render(request, 'plants/detail.html', {'plant': plant})
+
+class PlantCreate(CreateView):
+  model = Plant
+  fields = '__all__'
+
+class PlantUpdate(UpdateView):
+  model = Plant
+  fields = '__all__'
