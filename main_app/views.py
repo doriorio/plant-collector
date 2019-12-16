@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Plant
 
@@ -27,3 +27,7 @@ class PlantCreate(CreateView):
 class PlantUpdate(UpdateView):
   model = Plant
   fields = '__all__'
+
+class PlantDelete(DeleteView):
+  model = Plant
+  success_url = '/plants/'

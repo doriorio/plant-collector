@@ -29,7 +29,8 @@
 
           </div>
           <div class="content">
-              <a href="{% url 'plants_update' plant.id %}">Edit</a>
+              <a class="button" href="{% url 'plants_update' plant.id %}">Edit</a>
+              <a class="button" href="{% url 'plants_delete' plant.id %}">Delete</a>
           
         </div>
 
