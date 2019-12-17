@@ -36,6 +36,14 @@
 
         </div>
       </div>
+
+  <div class="card">
+    <div class="card-content">
+      {% for use in plant.use_set.all %}
+      Used primarily for {{ use.get_primary_type_display }} applications
+      {% endfor %}
+    </div>
+  </div>
       
 
 
