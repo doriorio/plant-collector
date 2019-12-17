@@ -33,5 +33,6 @@ class Use(models.Model):
     )
     description = models.CharField(max_length=480, default="")
     plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
+
     def __str__(self):
         return (f'{self.description} is a plant used for {self.get_primary_type_display()} purposes')

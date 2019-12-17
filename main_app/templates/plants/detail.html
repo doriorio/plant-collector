@@ -40,10 +40,19 @@
   <div class="card">
     <div class="card-content">
       {% for use in plant.use_set.all %}
-      Used primarily for {{ use.get_primary_type_display }} applications
+      <li>Used for {{ use.get_primary_type_display }} applications</li>
       {% endfor %}
     </div>
+    <div style="padding: 30px;">
+      <!-- new code below -->
+      <form action="{% url 'add_use' plant.id %}" method="post">
+        {% csrf_token %}
+        {{ use_form.as_table }}
+        <input type="submit" class="button" value="Add Use">
+      </form>
+      </div>
   </div>
+ 
       
 
 
