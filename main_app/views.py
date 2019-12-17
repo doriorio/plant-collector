@@ -47,4 +47,4 @@ def add_use(request, plant_id):
     new_use = form.save(commit=False)
     new_use.plant_id = plant_id
     new_use.save()
-  return redirect('detail', plant_id=plant_id)
+  return redirect('detail', plant_id=plan_id)
