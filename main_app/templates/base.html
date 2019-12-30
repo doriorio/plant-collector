@@ -13,8 +13,19 @@
       <nav class="navbar is-fixed-top has-background-primary">
 
             <div class="level-right">
+              {% if user.is_authenticated %}
+
             <a class="navbar-item level-item" href="{% url 'plant_create' %}">Add a Plant</a>
             <a class="navbar-item level-item" href="{% url 'index' %}">View All Plants</a>
+            <a class="navbar-item level-item" href="{% url 'pollinators_create' %}">Add a Pollinator</a>
+            <a class="navbar-item level-item" href="{% url 'pollinators_list' %}">See All Pollinators</a>
+            <a class="navbar-item level-item" href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+            <a href="{% url 'signup' %}">Sign Up</a></li>
+            <a class="navbar-item level-item" href="{% url 'login' %}">Log In</a>
+            {% endif %}
+
+
           </div>
       </nav>
       <p class="subtitle">

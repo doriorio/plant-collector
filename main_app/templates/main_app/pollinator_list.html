@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pollinator Details</h1>
+
+{% for pollinator in pollinator_list %}
+<a href="{% url 'pollinators_detail' pollinator.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ pollinator.name }}</span>
+
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
