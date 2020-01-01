@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Plant Collector</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body>
@@ -21,7 +23,7 @@
             <a class="navbar-item level-item" href="{% url 'pollinators_list' %}">See All Pollinators</a>
             <a class="navbar-item level-item" href="{% url 'logout' %}">Log Out</a>
             {% else %}
-            <a href="{% url 'signup' %}">Sign Up</a></li>
+            <a class="navbar-item level-item" href="{% url 'signup' %}">Sign Up</a></li>
             <a class="navbar-item level-item" href="{% url 'login' %}">Log In</a>
             {% endif %}
 

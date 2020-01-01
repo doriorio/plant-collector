@@ -19,6 +19,9 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+def landing(request):
+  return render(request, 'landing.html')
+
 @login_required
 def plants_index(request):
   plants = Plant.objects.all()
@@ -86,3 +89,4 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+

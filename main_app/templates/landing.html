@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="tile is-parent">
+    <article class="tile is-child notification is-info">
+      <p class="title">Welcome to Plant Collector!</p>
+      <p class="subtitle">A place to catalog your local flora and fauna</p>
+      <center>
+          <h1>
+      {% if user.is_authenticated %}
+
+      <a href="{% url 'plant_create' %}">Add a Plant</a>
+      {% else %}
+      <a href="{% url 'signup' %}">Sign Up</a></li>
+      <a href="{% url 'login' %}">Log In</a>
+      {% endif %}
+    </center>
+</h1>
+      <figure class="image is-4by3">
+        <img src="https://storage.needpix.com/rsynced_images/walnut-2961896_1280.jpg">
+      </figure>
+
+    </article>
+  </div>
+</div>
+{% endblock %}
+

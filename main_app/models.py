@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 
 class Pollinator(models.Model):
     name = models.CharField(max_length=140)
+    def __str__(self):
+        return self.name
     def get_absolute_url(self):
         return reverse('pollinators_detail', kwargs={'pk': self.id})
     
